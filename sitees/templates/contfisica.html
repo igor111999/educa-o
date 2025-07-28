@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICG PROJETOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        body {
+            flex: auto;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            background: linear-gradient(#0d0d0d, #212121);
+            font-family: "Raleway", sans-serif;
+            color: #d6dfed;
+        }
+        
+        body a {
+            text-decoration: none;
+            color: #fff
+        }
+        
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        div.container {
+            height: 9%;
+            font-family: "Raleway", sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(#0d0d0d, #212121);
+        }
+        
+        div.container a {
+            color: #fff;
+            text-decoration: none;
+            font: 20px Raleway;
+            margin: 0px 10px;
+            padding: 10px 10px;
+            position: relative;
+            z-index: 0;
+            cursor: pointer;
+        }
+        
+        .brown {
+            background: #000;
+        }
+        /* Highlight text out  */
+        
+        div.highlightTextOut a {
+            color: rgba(255, 255, 255, 0.445);
+        }
+        
+        div.highlightTextOut a:before,
+        div.highlightTextIn a:before {
+            position: absolute;
+            color: #fff;
+            font-weight: 800;
+            top: 0px;
+            left: 0px;
+            padding: 10px;
+            overflow: hidden;
+            content: attr(alt);
+            transition: all 0.3s;
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        
+        div.highlightTextOut a:hover:before,
+        div.highlightTextIn a:hover:before {
+            transform: scale(1);
+            opacity: 1;
+        }
+        /* Highlight text in  */
+        
+        div.highlightTextIn a {
+            color: rgba(0, 0, 0, 0.4);
+        }
+        
+        div.highlightTextIn a:before {
+            transform: scale(1.2);
+        }
+        
+        .dropdow {
+            background: linear-gradient;
+            padding: 1px;
+        }
+        
+        .socials a {
+            color: white;
+            font-size: 24px;
+            gap: 20px;
+        }
+        
+        div.main {
+            font-family: Times, Times New Roman, serif;
+            text-align: center;
+            display: flex;
+            background: linear-gradient;
+            position: relative;
+        }
+        
+        .card-group {
+            display: flex;
+            background: linear-gradient;
+        }
+        
+        .card-group img {
+            display: fixed;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+        
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+        
+        marquee {
+            background: linear-gradient;
+        }
+        
+        .card2 {
+            background: linear-gradient;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin-left: 50%;
+            margin-right: 50%;
+            padding: 5%;
+            margin: 1%;
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer {
+            background: blue;
+            width: 100%;
+            height: 70px;
+            position: absolute;
+            left: 0;
+            font-family: "Raleway", sans-serif;
+            text-align: center;
+        }
+        .card-group video {
+            display: fixed;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 400px;
+        }
+        
+        .card {
+            background: linear-gradient(gold, #212121);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .background {
+            background: linear-gradient(#0d0d0d, #212121);
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        @media screen and (max-width:600px){
+            html {
+                overflow-x: hidden;
+            }
+            .in {
+                display: none;
+            }
+            div.container {
+                flex-wrap: wrap;
+                align-items: columns;
+            }
+            div.main {
+                width: 100vw;
+            }
+            .card-groupe {
+                width: 300px;
+            }
+            .card-groupe video {
+                width:200px;
+            }
+            marquee {
+                display: none;
+            }
+            .card-group {
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .card2 {
+                width:300;
+            }
+            .card {
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container brown highlightTextOut">
+            <a class="in" style="background-color: transparent;" href="{{ url_for('homepage') }}"><i class="ri-home-7-line "></i></a>
+            <a href="{{ url_for('homepage') }}"  alt="PAGINA">PAGINA</a>
+            <a href="{{ url_for('homepage') }}" alt="INICIAL">INICIAL</a>
+            <a href="{{ url_for('matematica') }}" alt="MATEMÁTICA">MATEMÁTICA</a>
+            <a href="{{ url_for('fis') }}"target="_blank" alt="FÍSICA">FÍSICA</a>
+            <a href="{{ url_for('jog') }}"target="_blank"alt="JOGOS">JOGOS</a>
+            <a href="https://api.whatsapp.com/message/GLRXUSHTNSPSM1?autoload=1&app_absent=0 " target="_blank"  alt="CONTATO ">CONTATO</a>
+            <a class="in" href="{{ url_for('igor') }}" target="_blank" alt="SOBRE ">SOBRE</a>
+            <button class="in" style="background-color: blueviolet; "><a href="{{ url_for('login') }}" target="_blank" ></a>ENTRAR</button>
+            <button class="in" style="background-color: blueviolet; "><a href="{{ url_for('criarconta') }}"target="_blank" ></a>CADASTRO</button>
+        </div>
+    </nav>
+     <nav>
+        <div class="container brown highlightTextOut ">
+            <a href="# " alt=" ">CONTEÚDOS DE FÌSICA</a>
+        </div>
+    </nav>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911623873848871 "
+    crossorigin="anonymous "></script>
+    <!-- bloco1 -->
+    <ins class="adsbygoogle "
+        style="display:block "
+        data-ad-client="ca-pub-3911623873848871 "
+        data-ad-slot="8650021298 "
+        data-ad-format="auto "
+        data-full-width-responsive="true "></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <main>
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Cinemática</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('cine') }}">ESTUDE AQUI</a>
+                    </h5>
+                    </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Movimento Retilíneo</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('reti') }}">ESTUDE AQUI</a>
+                    </h5>
+                    </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Notação</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('noti') }}">ESTUDE AQUI</a>
+                    </h5>
+                    </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Sistema Decimal</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('siste') }}">ESTUDE AQUI</a>
+                    </h5>
+                    </div>
+            </div>
+        </div>   
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Queda Livre</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('quda') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Movimento Circular Uniforme</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('cula') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Atrito</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('atri') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Grandezas e vetores</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('deve') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Gravitação Universal</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('gravi') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Lei de Kepler</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('lekp') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Leis de Newton</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('lenw') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Queda com resistência do ar</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('qdre') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Unidades de força e massa</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('unfm') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Variações da aceleração da gravidade</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('vdac') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Alteração de campo magnético</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('alcm') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Campo magnético</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('cmm') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Campo elétrico puntual</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_5.png')}}">
+                    <h5>
+                        <a href="{{ url_for('cpunt') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Comportamento dos gases</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_5.png')}}">
+                    <h5>
+                        <a href="{{ url_for('gascp') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Corrente elétrica</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_5.png')}}">
+                    <h5>
+                        <a href="{{ url_for('ctel') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Dilatação de sólidos, gases e líquidos</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_5.png')}}">
+                    <h5>
+                        <a href="{{ url_for('disl') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Eletrização</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('eleti') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Fases G, L e S</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('fasesgl') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Força Elemotriz</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('fele') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Indução elétrica e ondas</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_1.png')}}">
+                    <h5>
+                        <a href="{{ url_for('inde') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Lei de Coulomb</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('lecl') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Leis da Termodinâmica</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('letd') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Linhas de Força</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('lifr') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Movimentos ondulatórios</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_2.png')}}">
+                    <h5>
+                        <a href="{{ url_for('mond') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Unidade ohm</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('ohm') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Ondas Sonoras</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('feipl') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Reflexão de Luz</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('refl') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Refração de luz</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_3.png')}}">
+                    <h5>
+                        <a href="{{ url_for('refr') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="card-group ">
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Temperaturas e Escalas</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('tempee') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Termodinâmica</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('tdm') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Vapor e Pressão</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('vapre') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body ">
+                    <textarea class="card ">Queda com resistência do ar</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_4.png')}}">
+                    <h5>
+                        <a href="{{ url_for('qdres') }}">ESTUDE AQUI</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <h3 style="background-color: transparent;"><a href="{{ url_for('igor') }}">DESENVOLVIDO POR IGOR CARVALHO</a></H3>
+    </footer>
+</body>
+
+</html>

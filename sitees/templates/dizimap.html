@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style2.css')}}"/>"
+</head>
+
+<body>
+    <nav>
+        <div class="container brown highlightTextOut">
+            <button style="background-color: transparent;"><a href="{{ url_for('igor') }}">IGOR</a></button>
+            <a href="{{ url_for('homepage') }}"  alt="PAGINA">PAGINA</a>
+            <a href="{{ url_for('homepage') }}" alt="INICIAL">INICIAL</a>
+            <a href="{{ url_for('matematica') }}" alt="MATEMÁTICA">MATEMÁTICA</a>
+            <a href="{{ url_for('fis') }}"target="_blank" alt="FÍSICA">FÍSICA</a>
+            <a href="{{ url_for('jog') }}"target="_blank"alt="JOGOS">JOGOS</a>
+            <a href="https://api.whatsapp.com/message/GLRXUSHTNSPSM1?autoload=1&app_absent=0 " target="_blank"  alt="CONTATO ">CONTATO</a>
+            <a href="" alt="PORTFOLIO ">PORTFOLIO</a>
+            <a href="{{ url_for('igor') }}" target="_blank" alt="SOBRE ">SOBRE</a>
+            <button style="background-color: blueviolet; "><a href="homepage.html" target="_blank" ></a>ENTRAR</button>
+            <button style="background-color: blueviolet; "><a href="criar_conta.html"target="_blank" ></a>CADASTRO</button>
+        </div>
+    </nav>
+    <div class="progresso">
+        <div class="barradeprogresso"></div>
+    </div>
+
+    <h1>Professor Igor Carvalho </h1>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911623873848871 " crossorigin="anonymous "></script>
+    <!-- bloco1 -->
+    <ins class="adsbygoogle " style="display:block " data-ad-client="ca-pub-3911623873848871 " data-ad-slot="8650021298 " data-ad-format="auto " data-full-width-responsive="true "></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <div class="areadepergunta">
+        <div class="pergunta">...</div>
+        <div class="opcoes">
+
+        </div>
+    </div>
+
+    <div class="areadepontuacao">
+        <img src=" " class="prizeImage" />
+        <div class="venceu">Parabéns!</div>
+        <div class="pctdacerto">Acertou 99%</div>
+        <div class="qtddacerto">Você respondeu 9 questões e acertou 8.</div>
+        <button>Fazer novamente</button>
+    </div>
+    <footer class="footer">
+        <h3>DESENVOLVIDO POR IGOR CARVALAHO</h3>
+    </footer>
+
+    <script src="{{url_for('static', filename='conteudos/dizimap.js')}}"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script></body>
+</body>
+
+</html>
