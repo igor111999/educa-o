@@ -112,7 +112,7 @@
             background: blue;
             width: 100%;
             height: 70px;
-            position: fixed;
+            position: relative;
             bottom: 0;
             left: 0;
             font-family: "Raleway", sans-serif;
@@ -214,8 +214,8 @@
         <div class="card-group ">
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Introdução Multiplicação</textarea>
-                    <img src="/quizmat/imgs/.png ">
+                    <textarea class="card ">Quiz 1</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_6.png')}}">
                     <h5>
                         <a href="{{ url_for('multip') }}">JOGUE AQUI</a>
                     </h5>
@@ -223,8 +223,8 @@
             </div>
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Multiplicação</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_7.png')}}">
                     <h5>
                         <a href="{{ url_for('multi') }}">JOGUE AQUI</a>
                     </h5>
@@ -232,19 +232,19 @@
             </div>
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Divisão</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_9.png')}}">
                     <h5>
-                        <a href="#">JOGUE AQUI</a>
+                        <a href="{{ url_for('divi') }}">JOGUE AQUI</a>
                     </h5>
                 </div>
             </div>
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Adição</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_8.png')}}">
                     <h5>
-                        <a href="#">JOGUE AQUI</a>
+                        <a href="{{ url_for('adic') }}">JOGUE AQUI</a>
                     </h5>
                 </div>
             </div>
@@ -252,37 +252,37 @@
         <div class="card-group ">
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Subtração</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_10.png')}}">
                     <h5>
-                        <a href="#">JOGUE AQUI</a>
+                        <a href="{{ url_for('sub') }}">JOGUE AQUI</a>
                     </h5>
                 </div>
             </div>
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Jogo da Velha</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_11.png')}}">
                     <h5>
-                        <a href="#">JOGUE AQUI</a>
+                        <a href="{{ url_for('velha') }}">JOGUE AQUI</a>
                     </h5>
                 </div>
             </div>
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Raciocínio Lógico</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_12.png')}}">
                     <h5>
-                        <a href="#">JOGUE AQUI</a>
+                        <a href="{{ url_for('racio') }}">JOGUE AQUI</a>
                     </h5>
                 </div>
             </div>
             <div class="card ">
                 <div class="card-body ">
-                    <textarea class="card ">Em breve conteúdos</textarea>
-                    <img src="/quizmat/imgs/ .png ">
+                    <textarea class="card ">Quiz 2</textarea>
+                    <img src="{{url_for('static', filename='imgs/img_6.png')}}">
                     <h5>
-                        <a href="#">JOGUE AQUI</a>
+                        <a href="{{ url_for('multip') }}">JOGUE AQUI</a>
                     </h5>
                 </div>
             </div>
@@ -291,7 +291,6 @@
     <footer class="footer">
         <h3 style="background-color: transparent;"><a href="{{ url_for('igor') }}">DESENVOLVIDO POR IGOR CARVALHO</a></H3>
     </footer>
-
 </body>
 
 </html>

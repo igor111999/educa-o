@@ -1,95 +1,97 @@
 let perguntas = [
     {
-        pergunta: 'Em qual elemento HTML nós colocamos o JavaScript?',
+        pergunta: 'Na ordem das operações, qual deve ser resolvido primeiro em uma expressão numerica ?',
         opcoes: [
-            'tag js',
-            'tag script',
-            'tag scripting',
-            'tag javascript'
+            'Parênteses',
+            'Expoentes',
+            'Multiplicação',
+            'Adição e Subtração'
+        ],
+        resposta: 0
+    },
+    {
+        pergunta: 'Qual a fórmula para calcular a área de um triângulo?',
+        opcoes: [
+            'A = l x l',
+            'A = (b x h)/2',
+            'A = b x h',
+            'A = π x r²'
+            ],
+        resposta: 1
+
+    },
+    {
+        pergunta: 'João tem R$ 100,00. Ele gasta R$ 25,00 em uma refeição e R$ 15,00 em uma passagem de ônibus. Quanto ele ainda tem?',
+        opcoes: [
+            'R$ 40,00',
+            'R$ 60,00',
+            'R$ 70,00'
         ],
         resposta: 1
     },
     {
-        pergunta: 'Onde é o local certo de colocar o JavaScript?',
+        pergunta: 'Qual é o nome da figura geométrica que possui quatro lados iguais e quatro ângulos retos ?',
         opcoes: [
-            'Na tag body',
-            'Na tag head',
-            'Tanto na tag body quanto a head estão corretas'
+            'Quadrado ',
+            'Triângulo',
+            'Retângulo',
+            'Losango'
         ],
-        resposta: 2
+        resposta: 0
     },
     {
-        pergunta: 'Qual a sintaxe correta para adicionar um arquivo JavaScript externo na tag script?',
+        pergunta: 'Qual o resultado da expressão (2-2x2)?',
         opcoes: [
-            'name="xxx.js"',
-            'src="xxx.js"',
-            'href="xxx.js"'
-        ],
-        resposta: 1
-    },
-    {
-        pergunta: 'Um arquivo JavaScript externo precisa ter a tag script',
-        opcoes: [
-            'Verdade',
-            'Falso'
-        ],
-        resposta: 1
-    },
-    {
-        pergunta: 'Como escrever um "Olá Mundo" em um alertbox?',
-        opcoes: [
-            'alertBox("Olá Mundo")',
-            'msgBox("Olá Mundo")',
-            'msg("Olá Mundo")',
-            'alert("Olá Mundo")'
+            '0',
+            '2',
+            '4',
+            '-2'
         ],
         resposta: 3
     },
     {
-        pergunta: 'Como você cria uma função no Javascript?',
+        pergunta: 'Quantos copos de 200 ml cabe em 1L',
         opcoes: [
-            'function:minhaFuncao()',
-            'function = minhaFuncao()',
-            'function minhaFuncao()'
+            '3',
+            '4',
+            '5'
         ],
         resposta: 2
     },
     {
-        pergunta: 'Como chamar uma função chamada "minhaFuncao"?',
+        pergunta: 'Classifique o Ângulo 0º?',
         opcoes: [
-            'call minhaFuncao',
-            'call function minhaFuncao',
-            'minhaFuncao()'
+            'Reto',
+            'Obtuso',
+            'Nulo'
         ],
         resposta: 2
     },
     {
-        pergunta: 'Como escrever uma condicional IF no Javascript?',
+        pergunta: 'Raiz quadrada de 4 É ?',
         opcoes: [
-            'if i = 5',
-            'if i == 5 then',
-            'if (i == 5)',
-            'if i = 5 then'
+            'racional',
+            'irracional'
+
+        ],
+        resposta: 1
+    },
+    {
+        pergunta: 'Um carro percorre 150 km a uma velocidade constante de 75 km/h. Quantas horas ele levou para completar a viagem?',
+        opcoes: [
+            '1,5 horas',
+            '2 horas',
+            '2,5 horas'
+        ],
+        resposta: 1
+    },
+    {
+        pergunta: 'Qual é o valor de x na equação 3x + 5 = 20?',
+        opcoes: [
+            'x = 3',
+            'x = 6',
+            'x = 5'
         ],
         resposta: 2
     },
-    {
-        pergunta: 'Como fazer um if que executa um código caso "i" for diferente de 5',
-        opcoes: [
-            'if (i != 5)',
-            'if (i <> 5)',
-            'if i <> 5',
-            'if i =! 5 then'
-        ],
-        resposta: 0
-    },
-    {
-        pergunta: 'Como o loop while começa?',
-        opcoes: [
-            'while (i <= 10)',
-            'while (i <= 10; i++)',
-            'while i = 1 to 10'
-        ],
-        resposta: 0
-    },
-];
+]

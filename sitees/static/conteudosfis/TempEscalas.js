@@ -46,7 +46,8 @@ let perguntas = [{
             'Escala Fahrenheit'
         ],
         resposta: 1
-        },
+    },
+    {
         pergunta: `Na escala Fahrenheit, ainda utilizada em alguns lugares, como estados unidos e porto rico, o ponto de fusão do gelo é marcado por 32 graus Fahrenheit (32 °F), e o ponto de ebulição da água, por 212 °F. assim, o intervalo entre essas temperaturas corresponde a 180 divisões. <p> Como na escala Celsius esse mesmo intervalo de temperatura corresponde a 100 divisões, concluímos que o intervalo de 1 °F, isto é, Δ (1 °F), corresponde aproximadamente à metade do intervalo de 1  °C (tem -se Δ (1 °F) 5 (5/9) Δ (1 °C)). <p> Suponha um termômetro graduado na escala Celsius e outro na escala Fahrenheit, sendo usados para medir uma mesma temperatura. <p> Seja TC a leitura do termômetro Celsius, e TF a do termômetro Fahrenheit. evidentemente, TC e TF são leituras diferentes da mesma temperatura. <p> observando a figura 1.10, notamos que: <p> • TC divisões em °C correspondem a (TF 2 32) divisões em °F; <p> • 100 divisões em °C correspondem a 180 divisões em °F. logo, podemos escrever: <p> T = T/100 x -32/180  <p> ou <p> T = T/5 x -32/9`,
 
         opcoes: [

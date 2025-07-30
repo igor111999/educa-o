@@ -51,12 +51,12 @@ function finishQuiz() {
     let points = Math.floor((respostacorreta / perguntas.length) * 100);
 
     if (points < 30) {
-        document.querySelector('.prizeImage').src = './static/imgs/Gold.png';
-        document.querySelector('.venceu').innerHTML = 'Parabéns, você é fera!';
+        document.querySelector('.prizeImage').src = './static/imgs/img_14.png';
+        document.querySelector('.venceu').innerHTML = 'Tá ruim hein?';
         document.querySelector('.pctdacerto').style.color = '#0D630D';
     } else if (points >= 30 && points < 70) {
-        document.querySelector('.prizeImage').src = './static/imgs/Gold.png';
-        document.querySelector('.venceu').innerHTML = 'Parabéns, você é fera!';
+        document.querySelector('.prizeImage').src = './static/imgs/Silver.png';
+        document.querySelector('.venceu').innerHTML = 'Muito Bom!';
         document.querySelector('.pctdacerto').style.color = '#0D630D';
     } else if (points >= 70) {
         document.querySelector('.prizeImage').src = './static/imgs/Gold.png';
@@ -65,7 +65,7 @@ function finishQuiz() {
     }
 
     document.querySelector('.pctdacerto').innerHTML = 'Muito Bom!';
-    document.querySelector('.qtddacerto').innerHTML = 'Você concluiu o seu estudo';
+    document.querySelector('.qtddacerto').innerHTML = 'Você concluiu !';
 
     document.querySelector('.areadepontuacao').style.display = 'block';
     document.querySelector('.areadepergunta').style.display = 'none';

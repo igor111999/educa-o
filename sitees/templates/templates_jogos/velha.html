@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Da Velha</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='stylejogos.css')}}" />
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            align-items: center;
+            background-color: ;
+        }
+
+        #areadjogo {
+            margin-top: 50px;
+        }
+
+        #pergunta {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            font-size: 18px;
+            padding: 5px;
+            width: 80px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        #avaliar {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .card {
+            background: linear-gradient(gold, #212121);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FFF;
+            margin: 20px 0;
+        }
+
+        .area {
+            width: 300px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 30px;
+        }
+        .area .item {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: #FFF;
+            cursor: pointer;
+        }
+        .item:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .item.t {
+            border-top: 1px solid #FFF;
+        }
+        .item.l {
+            border-left: 1px solid #FFF;
+        }
+        .item.r {
+            border-right: 1px solid #FFF;
+        }
+        .item.b {
+            border-bottom: 1px solid #FFF;
+        }
+
+        .info {
+            width: 300px;
+            display: flex;
+            margin-top: 30px;
+            border: 1px dotted #FFF;
+            padding: 10px;
+        }
+        .infoitem {
+            flex: 1;
+        }
+        .infotitulo {
+            text-align: center;
+            color: #FFF;
+            margin-bottom: 10px;
+        }
+        .infocorpo {
+            text-align: center;
+            color: #FFF;
+            font-size: 20px;
+        }
+
+        .reset {
+            border: 1px solid #000;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #FFF;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container brown highlightTextOut">
+            <button class="in" style="background-color: transparent;"><a href="{{ url_for('igor') }}">IGOR</a></button>
+            <a href="{{ url_for('homepage') }}"  alt="PAGINA">PAGINA</a>
+            <a href="{{ url_for('homepage') }}" alt="INICIAL">INICIAL</a>
+            <a href="{{ url_for('matematica') }}" alt="MATEMÁTICA">MATEMÁTICA</a>
+            <a href="{{ url_for('fis') }}"target="_blank" alt="FÍSICA">FÍSICA</a>
+            <a href="{{ url_for('jog') }}"target="_blank"alt="JOGOS">JOGOS</a>
+            <a href="https://api.whatsapp.com/message/GLRXUSHTNSPSM1?autoload=1&app_absent=0 " target="_blank"  alt="CONTATO ">CONTATO</a>
+            <a href="" alt="PORTFOLIO ">PORTFOLIO</a>
+            <a href="{{ url_for('igor') }}" target="_blank" alt="SOBRE ">SOBRE</a>
+            <button class="in" style="background-color: blueviolet; "><a href="homepage.html" target="_blank" ></a>ENTRAR</button>
+            <button class="in" style="background-color: blueviolet; "><a href="criar_conta.html"target="_blank" ></a>CADASTRO</button>
+        </div>
+    </nav>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911623873848871 " crossorigin="anonymous "></script>
+    <!-- bloco1 -->
+    <ins class="adsbygoogle " style="display:block " data-ad-client="ca-pub-3911623873848871 " data-ad-slot="8650021298 " data-ad-format="auto " data-full-width-responsive="true "></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <div class="progresso">
+        <div class="barradeprogresso"></div>
+    </div>
+    <h1>Professor Igor Carvalho </h1>
+    <div class="card ">
+        <h1>Jogo da velha</h1>
+        <div class="area">
+            <div data-item="a1" class="item b r"></div>
+            <div data-item="a2" class="item b r"></div>
+            <div data-item="a3" class="item b"></div>
+
+            <div data-item="b1" class="item b r"></div>
+            <div data-item="b2" class="item b r"></div>
+            <div data-item="b3" class="item b"></div>
+
+            <div data-item="c1" class="item r"></div>
+            <div data-item="c2" class="item r"></div>
+            <div data-item="c3" class="item"></div>
+        </div>
+
+        <div class="info">
+            <div class="infoitem">
+                <div class="infotitulo">A vez é:</div>
+                <div class="infocorpo vez">--</div>
+            </div>
+            <div class="infoitem">
+                <div class="infotitulo">Vencedor:</div>
+                <div class="infocorpo resultado">--</div>
+            </div>
+        </div>
+        <button class="reset">Resetar</button>
+    </div>
+    <script>
+        let board = {
+            a1: '',
+            a2: '',
+            a3: '',
+            b1: '',
+            b2: '',
+            b3: '',
+            c1: '',
+            c2: '',
+            c3: ''
+        };
+        let turn = '';
+        let warning = '';
+        let playing = false;
+
+        reset();
+
+        //Events
+        document.querySelector('.reset').addEventListener('click', reset);
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('click', itemClick);
+        });
+
+        //Functions
+        function itemClick(event) {
+            let item = event.target.getAttribute('data-item');
+            if (playing && board[item] === '') {
+                board[item] = turn;
+                renderBoard();
+                togglePlayer();
+            }
+        }
+
+        function reset() {
+            warning = '';
+
+            let random = Math.floor(Math.random() * 2);
+            turn = (random === 0) ? 'x' : 'o';
+
+            for (let i in board) {
+                board[i] = '';
+            }
+
+            playing = true;
+
+            renderBoard();
+            renderInfo();
+        }
+
+        function renderBoard() {
+            for (let i in board) {
+                let item = document.querySelector(`div[data-item=${i}]`);
+                    item.innerHTML = board[i];
+            }
+
+            checkGame();
+
+        }
+
+        function renderInfo() {
+            document.querySelector('.vez').innerHTML = turn;
+            document.querySelector('.resultado').innerHTML = warning;
+        }
+
+        function togglePlayer() {
+            turn = (turn === 'x') ? 'o' : 'x';
+            renderInfo();
+            checkGame();
+        }
+
+        function checkGame() {
+            if (checkWinnerFor('x')) {
+                warning = '"x" venceu!';
+                playing = false;
+            } else if (checkWinnerFor('o')) {
+                warning = '"o" venceu!';
+                playing = false;
+            } else if (isFull()) {
+                warning = 'Deu empate!';
+                playing = false;
+            }
+        }
+
+        function checkWinnerFor(player) {
+            let pos = [
+                'a1,a2,a3',
+                'b1,b2,b3',
+                'c1,c2,c3',
+                'a1,b1,c1',
+                'a2,b2,c2',
+                'a3,b3,c3',
+                'a1,b2,c3',
+                'a3,b2,c1'
+            ];
+
+            for (let w in pos) {
+                let pArray = pos[w].split(',');
+                let hasWon = pArray.every(option => board[option] === player);
+                if (hasWon) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function isFull() {
+            for (let i in board) {
+                if (board[i] === '') {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+    <footer class="footer">
+        <h3>DESENVOLVIDO POR IGOR CARVALAHO</h3>
+    </footer>
+</body>
+</html>

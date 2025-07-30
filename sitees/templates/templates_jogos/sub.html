@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Subtração</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='stylejogos.css')}}" />
+    <style>
+        .card{
+            background: linear-gradient(gold, #212121);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+         input[type="number"] {
+            font-size: 18px;
+        }
+         .avaliar {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .pergunta {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container brown highlightTextOut">
+            <button class="in" style="background-color: transparent;"><a href="{{ url_for('igor') }}">IGOR</a></button>
+            <a href="{{ url_for('homepage') }}"  alt="PAGINA">PAGINA</a>
+            <a href="{{ url_for('homepage') }}" alt="INICIAL">INICIAL</a>
+            <a href="{{ url_for('matematica') }}" alt="MATEMÁTICA">MATEMÁTICA</a>
+            <a href="{{ url_for('fis') }}"target="_blank" alt="FÍSICA">FÍSICA</a>
+            <a href="{{ url_for('jog') }}"target="_blank"alt="JOGOS">JOGOS</a>
+            <a href="https://api.whatsapp.com/message/GLRXUSHTNSPSM1?autoload=1&app_absent=0 " target="_blank"  alt="CONTATO ">CONTATO</a>
+            <a href="" alt="PORTFOLIO ">PORTFOLIO</a>
+            <a href="{{ url_for('igor') }}" target="_blank" alt="SOBRE ">SOBRE</a>
+            <button class="in" style="background-color: blueviolet; "><a href="homepage.html" target="_blank" ></a>ENTRAR</button>
+            <button class="in" style="background-color: blueviolet; "><a href="criar_conta.html"target="_blank" ></a>CADASTRO</button>
+        </div>
+    </nav>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3911623873848871 " crossorigin="anonymous "></script>
+    <!-- bloco1 -->
+    <ins class="adsbygoogle " style="display:block " data-ad-client="ca-pub-3911623873848871 " data-ad-slot="8650021298 " data-ad-format="auto " data-full-width-responsive="true "></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <div class="progresso">
+        <div class="barradeprogresso"></div>
+    </div>
+
+    <h1>Professor Igor Carvalho </h1>
+
+    <div class="card ">
+        <h1>Jogo da Subtração</h1>
+        <div id="areadjogo">
+            <div class="pergunta" id="pergunta"></div>
+            <input type="number" id="resposta">
+            <button onclick="verificarresposta()">Responder</button>
+            <div class="avaliar" id="avaliar"></div>
+        </div>
+    </div>
+    <script>
+        let num1, num2, respostadocorreta;
+
+        function gerarpergunta() {
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * 10) + 1;
+            respostadocorreta = num1 - num2;
+            document.getElementById("pergunta").textContent = `${num1} - ${num2} = ?`;
+            document.getElementById("resposta").value = "";
+            document.getElementById("avaliar").textContent = "";
+        }
+
+        function verificarresposta() {
+            const respostadousuario = parseInt(document.getElementById("resposta").value);
+            const avaliar = document.getElementById("avaliar");
+
+            if (isNaN(respostadousuario)) {
+                avaliar.textContent = "Por favor, insira um número.";
+                avaliar.style.color = "red";
+                return;
+            }
+
+            if (respostadousuario === respostadocorreta) {
+                avaliar.textContent = "Correto!";
+                avaliar.style.color = "green";
+                setTimeout(gerarpergunta, 1500); // Gera uma nova pergunta após 1.5 segundos
+            } else {
+                avaliar.textContent = `Errado. A resposta correta é, ${respostadocorreta}`;
+                avaliar.style.color = "red";
+                setTimeout(gerarpergunta, 1500); // Gera uma nova pergunta após 1.5 segundos
+            }
+        }
+        // Inicia o jogo
+        gerarpergunta();
+    </script>
+    <footer class="footer">
+        <h3>DESENVOLVIDO POR IGOR CARVALAHO</h3>
+    </footer>
+</body>
+</html>
