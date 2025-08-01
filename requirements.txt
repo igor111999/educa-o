@@ -88,7 +88,7 @@ pycparser==2.22
 PyDispatcher==2.0.5
 PyGetWindow==0.0.9
 pyinstall==0.1.4
-pyinstaller==5.7.0
+pyinstaller
 pyinstaller-hooks-contrib==2022.15
 PyJWT==2.10.1
 pyls-spyder==0.4.0
